@@ -1,4 +1,4 @@
-import { AppOptions } from "vinxi";
+import { AppOptions, BuildRouterSchema } from "vinxi";
 import { InlineConfig } from "vite";
 import type { Options } from "vite-plugin-solid";
 
@@ -14,6 +14,9 @@ type SolidStartInlineConfig = Omit<InlineConfig, "router"> & {
         solid?: Options,
         extensions?: string[],
         server?: AppOptions['server'],
+        routers?: {
+            client?: Pick<BuildRouterSchema, "base">,
+        }
         appRoot?: string,
         middleware?: string,
         islands?: boolean

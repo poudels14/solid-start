@@ -179,7 +179,7 @@ export function defineConfig(baseConfig = {}) {
             }
           })
         ],
-        base: "/_build"
+        base: start.routers?.client?.base || "/_build"
       },
       serverFunctions.router({
         handler: normalize(fileURLToPath(new URL("./server-handler.js", import.meta.url))),
